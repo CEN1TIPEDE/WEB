@@ -1,6 +1,3 @@
-// var value = document.getElementsById("val").values;
-
-
 function checkValue() {
     var B1val = document.getElementById("B1").value;
     var B2val = document.getElementById("B2").value;
@@ -10,25 +7,39 @@ function checkValue() {
     var K2val = document.getElementById("K2").value;
     var count = 0;//check if user fill 5 boxes
 
-    if(count == 5){
-        if (B1val == ""){
-            var B1 = (((B2val * P2val) * K1val) / (K2val * P1val));
-            document.getElementById("B1").value = B1;
+    if (B1val == ""){
+        var B1 = (((B2val * P2val) * K1val) / (K2val * P1val));
+        document.getElementById("B1").value = B1;
+        count++;
 
-        // }else if(B2val == "") {
-        //     var B2 = (((B2val * P2val) * K1val) / (K2val * P1val));
-        //     document.getElementById("B1").value = B1;
+    }else if(P1val == "") {
+        var P1 = (((P2val * B2val) * K1val) / (B1val * K2val));
+        document.getElementById("P1").value = P1;
+        count++;
         
-        // }else if(B1val == "") {
-        //     var B1 = (((B2val * P2val) * K1val) / (K2val * P1val));
-        //     document.getElementById("B1").value = B1;
+    }else if(K1val == "") {
+        var K1 = (((P2val * B2val) * K1val) / (P2val * B2val));
+        document.getElementById("K1").value = K1;
+        count++;
 
-    } else{
-        var advice = prompt("Please fill in boxes at lest 5 boxes before calculate");
+    }else if(B2val == "") {
+        var B2 = (((B1val * P1val) * K2val) / (K1val * P2val));
+        document.getElementById("B2").value = B2;
+        count++;
+        
+    }else if(P2val == "") {
+        var P2 = (((B1val * P1val) * K2val) / (K1val * B2val));
+        document.getElementById("P2").value = P2;
+        count++;
+        
+    }else if(K2val == "") {
+        var K2 = (((B2val * P2val) * K1val) / (B1val * P1val));
+        document.getElementById("K2").value = K2;
+        count++;
+    }
+
+    if(count < 5){
+        alert("Please fill in boxes at least 5 boxes before calculate");
+        return;
     }
 }
-
-// function calMethod(){
-//     for(i = 0 ; i<value.length ; i++){
-//         var result1 = ((B1*P1)/K1);
-//         var result2 = ((P2*B2)/K2);
