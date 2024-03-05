@@ -1,4 +1,12 @@
-img{
-    background-color: red;
-    display: inline-block;
+body {
+    background-image: url("https://img.freepik.com/free-vector/banana-background-desktop-wallpaper-cute-vector_53876-136880.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
+
+#val {
+    background-color: white;
+}
+
+/*@media screen {}*/
